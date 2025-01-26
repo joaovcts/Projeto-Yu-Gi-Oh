@@ -1,0 +1,176 @@
+body {
+    font-family: 'Yugioh', serif; /*Carregando a fonte em todos os pontos do site, se caso precisa-se fazer em partes separadas as fontes, não faria dessa forma*/
+    background-image: url(/src/imagens/fundo-site.jpg);
+    background-repeat: no-repeat; /*Só coloca o fundo uma vez e não repete mais*/
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh; /*aumenta a altura da janela de visualização, ou seja, ocupa 100% da janela do navegador para alinhar no centro a cartinha*/
+    gap: 30px;
+}
+
+.cabecalho{
+    display: flex;
+    justify-content: center; /*Justifica o conteúdo no centro e na horizontal*/
+}
+
+.cabecalho .titulo{
+    color: #F1ECFF;
+}
+
+.cartao{
+    opacity: 0;
+    display: flex;
+    flex-direction: column; /*Posiciona os filhos do cartao no html um em baixo do outro*/
+    padding: 12px;
+    gap: 5px;
+    position: absolute; /*Todos os cartoes estao empilhados um em cima do outro*/
+}
+
+.cartao.selecionado{
+    opacity: 1;
+    z-index: 1; /*Prioridade de posicionamento na pilha de cartas é do cartao selecionado*/
+}
+
+.lista-personagens{
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+    position: relative; /*Pega a referencia do pai dele na relação de um de cima do outro*/
+}
+
+.slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 130px;
+}
+
+.cartao .nome{
+    font-size: 13px;
+    padding: 5px;
+    text-transform: uppercase; /*Transforna o texto para letra maiuscula de dentro do cartão*/
+    background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a); /*cria um gradiente circular com 3 cores. Isso é um enfeite mas que deixa mais interessante, sendo 3 cores separadas*/
+    border: 2px solid #a67c52; /*cor na borda da tag*/
+    border-radius: 4px;
+}
+
+.cartao .estrela{
+    width: 20px;
+    height: 20px;
+    background-image: url(/src/imagens/nivel-carta.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.cartao .nivel-carta{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    gap: 5px;
+}
+
+.cartao .imagem-carta{
+    max-width: 260px;
+    align-self: center;
+}
+
+.cartao .informacoes{
+    border-radius: 5px;
+    max-width: 300px;
+    color: #000000;
+    background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a);
+    border: 2px solid #a67c52;
+    text-align: left;
+    line-height: 1.5;
+    padding: 5px;
+}
+
+.cartao .informacoes .informacoes-ataque{
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    padding: 10px;
+}
+
+.cartao .informacoes .informacoes-ataque span{
+    font-size: 13px;
+}
+
+.cartao .informacoes .descricao{
+    border-bottom: 1px solid #000000;
+    padding: 10px;
+    max-height: 95px;
+    overflow-y: scroll; /*Cria uma rolagem para scrollar e ver o texto da descrição da carta*/
+    font-size: 13px;
+}
+
+.fundo-1{
+    background: url(/src/imagens/fundo-1.jpg);
+}
+
+.fundo-2{
+    background: url(/src/imagens/fundo-2.jpg);
+}
+
+.fundo-3{
+    background: url(/src/imagens/fundo-3.jpg);
+}
+
+.fundo-4{
+    background: url(/src/imagens/fundo-4.jpg);
+}
+
+.fundo-5{
+    background: url(/src/imagens/fundo-5.jpg);
+}
+
+.fundo-6{
+    background: url(/src/imagens/fundo-6.jpg);
+}
+
+.fundo-7{
+    background: url(/src/imagens/fundo-7.jpg);
+}
+
+.btn-seta{
+    background-color: #ffffff;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out; /*Transiciona a cor de fundo de botão criando um fade de cor animado ao botao*/
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; /*Cria uma sombra na borda do botão*/ 
+}
+
+.btn-seta.btn-voltar{ /*Nao coloca espaço pois esta acessando uma div com duas classes e pega o .btn-voltar girando 180graus para mudar a direção*/
+    transform: rotateY(180deg);
+}
+
+.btn-seta:hover{ /*hover é passar por cima, quando passa a seta por cima, muda a cor da seta para roxo com uma transição suave devido a transition que colocou na .btn-seta*/
+    background-color: #8351fe;
+}
+
+/*Estiliza a rolagem da página (descrição da carta) ficando mais estilizada*/
+body::-webkit-scrollbar-track{
+    background-color: #c08057;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c08057;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c08057;
+}

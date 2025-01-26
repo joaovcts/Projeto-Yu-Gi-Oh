@@ -1,0 +1,15 @@
+/*Todos os sites terão esse arquivo*/
+/*Reseta os estilos padrões do html para se conseguir colocar os próprios estilos*/
+/*Alt+shift+f melhora a formatação do código de forma automatica, identação por exemplo e etc*/
+
+* {
+    margin: 0;
+    padding: 0; /*Espaçamento interno*/
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none; /*retira o pontinho da lista*/
+}
+
+/*O arquivo é lido em cascata, sendo a ordem de importancia sendo de baixo pra cima, sendo o mais abaixo o mais importante*/
